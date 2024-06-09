@@ -12,7 +12,7 @@ getProductsByCategory(category).then((res) =>{
 })
   }, [category])
 
-  return (products)
+  return {products}
 }
 
 

@@ -7,11 +7,8 @@ const Category = () => {
 
   const {id} = useParams()
 
-  const [products] = useProductsByCategory (id);
-
-  return (
-    <ItemListContainerComponent products={products}  />
-  )
-}
+  const {products} = useProductsByCategory (id);
+  return <ItemListContainerComponent products={products} /> 
+};
 
 export default Category
