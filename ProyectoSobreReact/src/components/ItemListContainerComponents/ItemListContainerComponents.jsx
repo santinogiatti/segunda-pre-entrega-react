@@ -1,15 +1,42 @@
 import React from 'react'
 import MainLayout from '../../layouts/MainLayout';
 import NavBarComponent from '../NavBarComponents/NavBarComponents';
+import { useProducts } from '../../hooks/useProducts';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
 MainLayout
 
 
-const ItemListContainerComponent = ({greeting}) => {
+const ItemListContainerComponent = ({products}) => {
    
-  const customStylesItem = {color: "white", fontsize: "2.5 rem", margin: "150 rem", cursor: "pointer" };
+
+ 
 
 
-  return <div style={customStylesItem}> <NavBarComponent/>   </div>
+  return products.map ((product) =>{
+    return  (
+      
+     
+      
+      <Card key={product.id} style={{ width: '18rem', margin: '15px' }}>
+        <Card.Img variant="top" src={product.thumbnail } />
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+          <Card.Text>
+            {product.description}
+          </Card.Text>
+          <Link to= {`/item/${product.id}`}>ir a detalle</Link>
+        </Card.Body>
+      </Card>
+     
+     
+    );
+
+    
+
+  })
 
 
   
