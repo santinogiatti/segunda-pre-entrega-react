@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout';
 import MainRouter from './Routes/MainRouter';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartProvider } from './context/CartContext';
 
 
 
@@ -15,8 +16,11 @@ function App() {
 
     <>
 
-      
+      <CartProvider>
+
       <MainRouter/>
+      
+      </CartProvider>
       
       
 

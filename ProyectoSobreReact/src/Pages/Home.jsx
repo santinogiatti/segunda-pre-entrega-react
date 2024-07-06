@@ -1,20 +1,19 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ItemListContainerComponent from '../components/ItemListContainerComponents/ItemListContainerComponents'
-import { useProducts } from '../hooks/useProducts'
+import { useCollectionItems } from "../hooks/useCollectionItems";
+
 
 const Home = () => {
- const {products} = useProducts()
+ const {items} = useCollectionItems("products")
 
-    return (
+    return  (
 
-
-    
-      <>
-      <ItemListContainerComponent products={products}/>
+   <>
+      <ItemListContainerComponent products={items}/>
       </>
     
-  )
-
+    )
+    
 }
 
 export default Home

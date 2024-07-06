@@ -1,25 +1,15 @@
 import React from 'react'
 import MainLayout from '../../layouts/MainLayout';
-import NavBarComponent from '../NavBarComponents/NavBarComponents';
-import { useProducts } from '../../hooks/useProducts';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 MainLayout
 
-
 const ItemListContainerComponent = ({products}) => {
-   
-
- 
-
 
   return products.map ((product) =>{
-    return  (
-      
-     
-      
+    return  (   
       <Card key={product.id} style={{ width: '18rem', margin: '15px' }}>
         <Card.Img variant="top" src={product.thumbnail } />
         <Card.Body>
@@ -29,17 +19,10 @@ const ItemListContainerComponent = ({products}) => {
           </Card.Text>
           <Link to= {`/item/${product.id}`}>ir a detalle</Link>
         </Card.Body>
-      </Card>
-     
-     
-    );
-
-    
-
+      </Card>   
+    ); 
   })
-
-
-  
+ 
 };
 
 export default ItemListContainerComponent
